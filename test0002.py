@@ -1,3 +1,17 @@
+import time
+import sys
+import os
+import os.path
+import pickle
+import json
+
+
+def clear():
+    os.system('cls')
+
+def license():
+    print("[SYSTEM]This work © 2022 by Diamond Wolf is licensed under CC BY-NC-SA 4.0")
+
 def sys_Player_refsheet_pop():
     print("\n")
     time.sleep(0.5)
@@ -28,22 +42,48 @@ Player_personality_Specialized = str("Specialized\nSomeone specialized will be s
 Player_personality_Suspicious = str("Suspicious\nSuspicious characters are skeptical of everyone they meet. This can help them spot people who are trying to do them wrong, but the problem with that is that it can turn people away from you because of how distrustful you are.")
 Player_personality_Uncivilized = str("Uncivilized\nAn uncivilized person was raised in the wild or is just someone who finds themselves being able to define one trait related to animals before people. They may be awkward when it comes to various situations where they must speak, so make sure there are sociable people to prop them up."+"\n")
 
+def dprint001(s):
+    for c in s:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.10)
+def dprint002(s):
+    for c in s:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.50)
+def dprint003(s):
+    for c in s:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.80)
+
+def saveload():
+    if file_exists:
+        file=open("savefile001.txt","r")
+        checkpoint = file.read()
+        file.close()
+    else:
+        checkpoint = "0"
+        print("[SYSTEM]No savefile found")
+        print("[SYSTEM]Would you like to go to checkpoint '1'?")
+        sys_nosavefound_yn = input("[SYSTEM]Would you like to start from the beginning ? (y/n)\n")
+        if sys_nosavefound_yn.lower() in  ("yes", "y"):
+            room_all()
+        else:
+            print("[SYSTEM]Program finished\n")
+            input("[SYSTEM]Press enter to exit")
+
+def save():
+    file=open("savefile001.txt","w")
+    file.write()
+    file.close()
+
+
 def room_all():
     room_1()
 
 def room_1():
-    Player_FName = input("First Name:")
-    print("\n")
-    Player_LName = input("Last Name:")
-    print("\n")
-    dprint001(Player_FName+"..."+Player_LName+"\nOk ! Hope I would remember it for at least a few minute")
-    dprint002("s...\n")
-    while True:
-        Player_Age = input("Age:")
-        if Player_Age.isnumeric() and 13 <= int(Player_Age) <= 40 :
-            break
-        else:
-            print("[SYSTEM]Incorrect input ! Try again\n")
     time.sleep(3)
     license()
     time.sleep(3)
@@ -71,9 +111,22 @@ def room_1():
     dprint002("s..?\n")
     print("**hands you a paper and a pen**")
     time.sleep(3)
+    Player_FName = input("First Name:")
+    print("\n")
+    Player_LName = input("Last Name:")
+    print("\n")
+    dprint001(Player_FName+"..."+Player_LName+"\nOk ! Hope I would remember it for at least a few minute")
+    dprint002("s...\n")
+    while True:
+        Player_Age = input("Age:")
+        if Player_Age.isnumeric() and 13 <= int(Player_Age) <= 40 :
+            break
+        else:
+            print("[SYSTEM]Incorrect input ! Try again\n")
     print("\n\n")
     sys_Player_personalitya()
     print("\n")
+
 
     while True:
         sys_NSFW = input("!! Warning !! \nDo you want NSFW content to be included in the scenes descriptions ? The game by default includes details about blood and some else details, to continue with the full experience type 'yes', else, if you want to exclude the details and just get a faster description about the NSFW scenes, type 'no'\n")
