@@ -5,19 +5,6 @@ import os.path
 import pickle
 import json
 
-
-def clear():
-    os.system('cls')
-
-def license():
-    print("[SYSTEM]This work © 2022 by Diamond Wolf is licensed under CC BY-NC-SA 4.0")
-
-def sys_Player_refsheet_pop():
-    print("\n")
-    time.sleep(0.5)
-def sys_Player_personalitya():
-    Player_personality = input(Player_personality_Abrasiveness+"\n\n"+Player_personality_AbsentMinded+"\n\n"+Player_personality_Aggression+"\n\n"+Player_personality_Brawler+"\n\n"+Player_personality_Cautious+"\n\n"+Player_personality_Detached+"\n\n"+Player_personality_Dishonesty+"\n\n"+Player_personality_Distinctive+"\n\n"+Player_personality_Easygoing+"\n\n"+Player_personality_Farsighted+"\n\n"+Player_personality_Focused+"\n\n"+Player_personality_HardOfHearing+"\n\n"+Player_personality_Hardy+"\n\n"+Player_personality_Honest+"\n\n"+Player_personality_Illiterate+"\n\n"+Player_personality_Inattentive+"\n\n"+Player_personality_Polite+"\n\n"+Player_personality_Quick+"\n\n"+Player_personality_Relentless+"\n\n"+Player_personality_Slow+"\n\n"+Player_personality_Specialized+"\n\n"+Player_personality_Suspicious+"\n\n"+Player_personality_Uncivilized)
-
 Player_personality_Abrasiveness = str("Abrasiveness\nAbrasiveness can be seen as a negative trait because it describes having trouble being nice in a conversation. You're demanding, and although you can get what you want, you may end up hurting others. It can increase your intimidation stat, but people will find you insufferable, and it can destroy civil discourse.")
 Player_personality_AbsentMinded = str("Absent-Minded\nA character who is absentminded is seen as someone who is smart but is always thinking too much. Because of this, they may end up being lost in the conversation or not being aware of where they are. Your character may be someone they rely on for knowledge, but when it comes to being in the present, count them out.")
 Player_personality_Aggression = str("Aggression\nAggression is when a character is always ready to fight and is quite a menace. However, because of aggression, they may end up starting fights when there is a more peaceful solution, and their anger and brute force may be a weakness when the battle requires more strategy. Any kind of gestures that might demand power are included in this personality.")
@@ -41,6 +28,25 @@ Player_personality_Slow = str("Slow\nSlowness gives a character two personality 
 Player_personality_Specialized = str("Specialized\nSomeone specialized will be skilled in one particular subject but may have fewer skills in other subjects. For example, a character may be a master at crafting, but poor at fighting. Make sure your skills are balanced or learn to deal with your weakness.")
 Player_personality_Suspicious = str("Suspicious\nSuspicious characters are skeptical of everyone they meet. This can help them spot people who are trying to do them wrong, but the problem with that is that it can turn people away from you because of how distrustful you are.")
 Player_personality_Uncivilized = str("Uncivilized\nAn uncivilized person was raised in the wild or is just someone who finds themselves being able to define one trait related to animals before people. They may be awkward when it comes to various situations where they must speak, so make sure there are sociable people to prop them up."+"\n")
+
+file_exists = os.path.isfile('savefile001.txt')
+def clear():
+    os.system('cls')
+
+def license():
+    print("[SYSTEM]This work © 2022 by Diamond Wolf is licensed under CC BY-NC-SA 4.0")
+
+def sys_Player_refsheet_pop():
+    print("\n")
+    time.sleep(0.5)
+def sys_Player_personalitya():
+    while True:
+        Player_personality = input(Player_personality_Abrasiveness + "\n\n" + Player_personality_AbsentMinded + "\n\n" + Player_personality_Aggression + "\n\n" + Player_personality_Brawler + "\n\n" + Player_personality_Cautious + "\n\n" + Player_personality_Detached + "\n\n" + Player_personality_Dishonesty + "\n\n" + Player_personality_Distinctive + "\n\n" + Player_personality_Easygoing + "\n\n" + Player_personality_Farsighted + "\n\n" + Player_personality_Focused + "\n\n" + Player_personality_HardOfHearing + "\n\n" + Player_personality_Hardy + "\n\n" + Player_personality_Honest + "\n\n" + Player_personality_Illiterate + "\n\n" + Player_personality_Inattentive + "\n\n" + Player_personality_Polite + "\n\n" + Player_personality_Quick + "\n\n" + Player_personality_Relentless + "\n\n" + Player_personality_Slow + "\n\n" + Player_personality_Specialized + "\n\n" + Player_personality_Suspicious + "\n\n" + Player_personality_Uncivilized + "\nEnter personality:")
+        if Player_personality == "Abrasiveness" or Player_personality == "Absent-Minded" or Player_personality == "Aggression" or Player_personality == "Brawler" or Player_personality == "Cautious" or Player_personality == "Detached" or Player_personality == "Dishonesty" or Player_personality == "Distinctive" or Player_personality == "Easygoing" or Player_personality == "Farsighted" or Player_personality == "Focused" or Player_personality == "Hard of Hearing" or Player_personality == "Hardy" or Player_personality == "Honest" or Player_personality == "Illiterate" or Player_personality == "Inattentive" or Player_personality == "Polite" or Player_personality == "Quick" or Player_personality == "Relentless" or Player_personality == "Slow" or Player_personality == "Specialized" or Player_personality == "Suspicious" or Player_personality == "Uncivilized":
+            break
+        else:
+            print("[SYSTEM]Incorrect input ! Try again\n")
+
 
 def dprint001(s):
     for c in s:
@@ -66,19 +72,25 @@ def saveload():
     else:
         checkpoint = "0"
         print("[SYSTEM]No savefile found")
-        print("[SYSTEM]Would you like to go to checkpoint '1'?")
         sys_nosavefound_yn = input("[SYSTEM]Would you like to start from the beginning ? (y/n)\n")
-        if sys_nosavefound_yn.lower() in  ("yes", "y"):
-            room_all()
-        else:
-            print("[SYSTEM]Program finished\n")
-            input("[SYSTEM]Press enter to exit")
+        while True:
+            if sys_nosavefound_yn.lower() in ("yes", "y"):
+                room_all()
+
+            elif sys_nosavefound_yn.lower() in ("no", "n"):
+                print("[SYSTEM]Program finished\n")
+                input("[SYSTEM]Press enter to exit")
+                sys.exit()
+
+            else:
+                print("[SYSTEM]Incorrect input ! Try again\n")
+
+
 
 def save():
     file=open("savefile001.txt","w")
     file.write()
     file.close()
-
 
 def room_all():
     room_1()
@@ -122,7 +134,13 @@ def room_1():
         if Player_Age.isnumeric() and 13 <= int(Player_Age) <= 40 :
             break
         else:
-            print("[SYSTEM]Incorrect input ! Try again\n")
+            if Player_Age.isnumeric():
+                if Player_Age < 13:
+                    print("[SYSTEM]Too young!")
+                elif Player_Age > 40:
+                    print("[SYSTEM]Too old!")
+            else:
+                print("[SYSTEM]Incorrect input ! Try again\n")
     print("\n\n")
     sys_Player_personalitya()
     print("\n")

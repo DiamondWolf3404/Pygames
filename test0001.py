@@ -7,8 +7,6 @@ import pickle
 import json
 
 
-file_exists = os.path.isfile('savefile001.txt')
-
 sys_save_yn = input("[SYSTEM]Do you want to get back to the last save point (if you never reached a save point, enter n)? (y/n)")
 while True:
     if sys_save_yn.lower() in  ("yes", "y"):
