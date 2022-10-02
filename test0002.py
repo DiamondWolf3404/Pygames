@@ -92,8 +92,20 @@ def save():
     file.write()
     file.close()
 
-def room_all():
-    room_1()
+def checkpoint1():
+    print("[SYSTEM]Checkpoint '1' loaded")
+
+def checkpoint2():
+    print("[SYSTEM]Checkpoint '2' loaded")
+
+def room_2():
+    dprint001("Perfec")
+    dprint002("t...\n")
+    dprint001("S")
+    dprint002("o...")
+
+    print("[SYSTEM]Still some work to do here\n")
+    checkpoint2()
 
 def room_1():
     time.sleep(3)
@@ -139,6 +151,8 @@ def room_1():
                     print("[SYSTEM]Too young!")
                 elif Player_Age > 40:
                     print("[SYSTEM]Too old!")
+                else:
+                    print("[SYSTEM]Incorrect input ! Try again\n")
             else:
                 print("[SYSTEM]Incorrect input ! Try again\n")
     print("\n\n")
@@ -160,8 +174,9 @@ def room_1():
     print("\n")
     save()
     print("[SYSTEM]Checkpoint reached")
+    checkpoint1()
 
-    def checkpoint1():
-        print("[SYSTEM]Checkpoint '1' loaded")
 
-    input("[SYSTEM]Press enter to exit")
+def room_all():
+    room_1()
+    room_2()
