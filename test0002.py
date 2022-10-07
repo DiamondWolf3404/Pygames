@@ -35,6 +35,7 @@ def clear():
 
 def license():
     print("[SYSTEM]This work © 2022 by Diamond Wolf is licensed under CC BY-NC-SA 4.0")
+    print("[SYSTEM]To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/")
 
 def sys_Player_refsheet_pop():
     print("\n")
@@ -106,11 +107,12 @@ def room_2():
 
     print("[SYSTEM]Still some work to do here\n")
     checkpoint2()
+    input("[SYSTEM]Press enter to continue")
 
 def room_1():
     time.sleep(3)
     license()
-    time.sleep(3)
+    time.sleep(5)
     os.system('cls')
     time.sleep(2)
     dprint001("Welcom")
@@ -134,28 +136,30 @@ def room_1():
     dprint001("would you mind filling thi")
     dprint002("s..?\n")
     print("**hands you a paper and a pen**")
-    time.sleep(3)
-    Player_FName = input("First Name:")
+    time.sleep(1)
     print("\n")
+    Player_FName = input("First Name:")
+    #print("\n")
     Player_LName = input("Last Name:")
     print("\n")
     dprint001(Player_FName+"..."+Player_LName+"\nOk ! Hope I would remember it for at least a few minute")
     dprint002("s...\n")
     while True:
         Player_Age = input("Age:")
-        if Player_Age.isnumeric() and 13 <= int(Player_Age) <= 40 :
+        if Player_Age.isnumeric() and 13 <= int(Player_Age) <= 40:
             break
         else:
             if Player_Age.isnumeric():
-                if Player_Age < 13:
+                if int(Player_Age) <= 13:
                     print("[SYSTEM]Too young!")
-                elif Player_Age > 40:
+                elif int(Player_Age) >= 40:
                     print("[SYSTEM]Too old!")
                 else:
                     print("[SYSTEM]Incorrect input ! Try again\n")
             else:
                 print("[SYSTEM]Incorrect input ! Try again\n")
     print("\n\n")
+    print('{:^24s}'.format("------------------------------------------"))
     sys_Player_personalitya()
     print("\n")
 
