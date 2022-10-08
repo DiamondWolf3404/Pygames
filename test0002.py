@@ -29,21 +29,27 @@ Player_personality_Specialized = str("Specialized\nSomeone specialized will be s
 Player_personality_Suspicious = str("Suspicious\nSuspicious characters are skeptical of everyone they meet. This can help them spot people who are trying to do them wrong, but the problem with that is that it can turn people away from you because of how distrustful you are.")
 Player_personality_Uncivilized = str("Uncivilized\nAn uncivilized person was raised in the wild or is just someone who finds themselves being able to define one trait related to animals before people. They may be awkward when it comes to various situations where they must speak, so make sure there are sociable people to prop them up."+"\n")
 
-file_exists = os.path.isfile('savefile001.txt')
+file_exists = os.path.isfile('savefile001.sav')
+
+
 def clear():
     os.system('cls')
+
 
 def license():
     print("[SYSTEM]This work © 2022 by Diamond Wolf is licensed under CC BY-NC-SA 4.0")
     print("[SYSTEM]To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/")
 
-def sys_Player_refsheet_pop():
+
+def sys_player_refsheet_pop():
     print("\n")
     time.sleep(0.5)
-def sys_Player_personalitya():
+
+
+def sys_player_personalitya():
     while True:
-        Player_personality = input(Player_personality_Abrasiveness + "\n\n" + Player_personality_AbsentMinded + "\n\n" + Player_personality_Aggression + "\n\n" + Player_personality_Brawler + "\n\n" + Player_personality_Cautious + "\n\n" + Player_personality_Detached + "\n\n" + Player_personality_Dishonesty + "\n\n" + Player_personality_Distinctive + "\n\n" + Player_personality_Easygoing + "\n\n" + Player_personality_Farsighted + "\n\n" + Player_personality_Focused + "\n\n" + Player_personality_HardOfHearing + "\n\n" + Player_personality_Hardy + "\n\n" + Player_personality_Honest + "\n\n" + Player_personality_Illiterate + "\n\n" + Player_personality_Inattentive + "\n\n" + Player_personality_Polite + "\n\n" + Player_personality_Quick + "\n\n" + Player_personality_Relentless + "\n\n" + Player_personality_Slow + "\n\n" + Player_personality_Specialized + "\n\n" + Player_personality_Suspicious + "\n\n" + Player_personality_Uncivilized + "\nEnter personality:")
-        if Player_personality == "Abrasiveness" or Player_personality == "Absent-Minded" or Player_personality == "Aggression" or Player_personality == "Brawler" or Player_personality == "Cautious" or Player_personality == "Detached" or Player_personality == "Dishonesty" or Player_personality == "Distinctive" or Player_personality == "Easygoing" or Player_personality == "Farsighted" or Player_personality == "Focused" or Player_personality == "Hard of Hearing" or Player_personality == "Hardy" or Player_personality == "Honest" or Player_personality == "Illiterate" or Player_personality == "Inattentive" or Player_personality == "Polite" or Player_personality == "Quick" or Player_personality == "Relentless" or Player_personality == "Slow" or Player_personality == "Specialized" or Player_personality == "Suspicious" or Player_personality == "Uncivilized":
+        player_personality = input(Player_personality_Abrasiveness + "\n\n" + Player_personality_AbsentMinded + "\n\n" + Player_personality_Aggression + "\n\n" + Player_personality_Brawler + "\n\n" + Player_personality_Cautious + "\n\n" + Player_personality_Detached + "\n\n" + Player_personality_Dishonesty + "\n\n" + Player_personality_Distinctive + "\n\n" + Player_personality_Easygoing + "\n\n" + Player_personality_Farsighted + "\n\n" + Player_personality_Focused + "\n\n" + Player_personality_HardOfHearing + "\n\n" + Player_personality_Hardy + "\n\n" + Player_personality_Honest + "\n\n" + Player_personality_Illiterate + "\n\n" + Player_personality_Inattentive + "\n\n" + Player_personality_Polite + "\n\n" + Player_personality_Quick + "\n\n" + Player_personality_Relentless + "\n\n" + Player_personality_Slow + "\n\n" + Player_personality_Specialized + "\n\n" + Player_personality_Suspicious + "\n\n" + Player_personality_Uncivilized + "\nEnter personality:")
+        if player_personality == "Abrasiveness" or player_personality == "Absent-Minded" or player_personality == "Aggression" or player_personality == "Brawler" or player_personality == "Cautious" or player_personality == "Detached" or player_personality == "Dishonesty" or player_personality == "Distinctive" or player_personality == "Easygoing" or player_personality == "Farsighted" or player_personality == "Focused" or player_personality == "Hard of Hearing" or player_personality == "Hardy" or player_personality == "Honest" or player_personality == "Illiterate" or player_personality == "Inattentive" or player_personality == "Polite" or player_personality == "Quick" or player_personality == "Relentless" or player_personality == "Slow" or player_personality == "Specialized" or player_personality == "Suspicious" or player_personality == "Uncivilized":
             break
         else:
             print("[SYSTEM]Incorrect input ! Try again\n")
@@ -54,20 +60,25 @@ def dprint001(s):
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.10)
+
+
 def dprint002(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.50)
+
+
 def dprint003(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.80)
 
+
 def saveload():
     if file_exists:
-        file=open("savefile001.txt","r")
+        file=open("savefile001","r")
         checkpoint = file.read()
         file.close()
     else:
@@ -87,17 +98,19 @@ def saveload():
                 print("[SYSTEM]Incorrect input ! Try again\n")
 
 
-
 def save():
-    file=open("savefile001.txt","w")
+    file = open("savefile001.sav", "w")
     file.write()
     file.close()
+
 
 def checkpoint1():
     print("[SYSTEM]Checkpoint '1' loaded")
 
+
 def checkpoint2():
     print("[SYSTEM]Checkpoint '2' loaded")
+
 
 def room_2():
     dprint001("Perfec")
@@ -108,6 +121,7 @@ def room_2():
     print("[SYSTEM]Still some work to do here\n")
     checkpoint2()
     input("[SYSTEM]Press enter to continue")
+
 
 def room_1():
     time.sleep(3)
@@ -125,7 +139,7 @@ def room_1():
     dprint001("Diamond Wolf,")
     time.sleep(2)
     dprint001(" the creator of thi")
-    dprint002("s...")
+    dprint002("s....")
     dprint001("thing or ")
     time.sleep(1)
     dprint001("whatever it i")
@@ -160,17 +174,16 @@ def room_1():
                 print("[SYSTEM]Incorrect input ! Try again\n")
     print("\n\n")
     print('{:^24s}'.format("------------------------------------------"))
-    sys_Player_personalitya()
+    sys_player_personalitya()
     print("\n")
 
-
     while True:
-        sys_NSFW = input("!! Warning !! \nDo you want NSFW content to be included in the scenes descriptions ? The game by default includes details about blood and some else details, to continue with the full experience type 'yes', else, if you want to exclude the details and just get a faster description about the NSFW scenes, type 'no'\n")
-        if sys_NSFW.lower() in  ("yes", "y"):
-            NSFW = str("true")
+        sys_nsfw = input("!! Warning !! \nDo you want NSFW content to be included in the scenes descriptions ? The game by default includes details about blood and some else details, to continue with the full experience type 'yes', else, if you want to exclude the details and just get a faster description about the NSFW scenes, type 'no'\n")
+        if sys_nsfw.lower() in  ("yes", "y"):
+            NSFW = True
             break
-        elif sys_NSFW.lower() in  ("no", "n"):
-            NSFW = str("false")
+        elif sys_nsfw.lower() in  ("no", "n"):
+            NSFW = False
             break
         else:
             print("[SYSTEM]Incorrect input ! Try again\n")
