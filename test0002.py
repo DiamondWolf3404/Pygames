@@ -49,7 +49,7 @@ def sys_player_refsheet_pop():
 def sys_player_personalitya():
     while True:
         player_personality = input(Player_personality_Abrasiveness + "\n\n" + Player_personality_AbsentMinded + "\n\n" + Player_personality_Aggression + "\n\n" + Player_personality_Brawler + "\n\n" + Player_personality_Cautious + "\n\n" + Player_personality_Detached + "\n\n" + Player_personality_Dishonesty + "\n\n" + Player_personality_Distinctive + "\n\n" + Player_personality_Easygoing + "\n\n" + Player_personality_Farsighted + "\n\n" + Player_personality_Focused + "\n\n" + Player_personality_HardOfHearing + "\n\n" + Player_personality_Hardy + "\n\n" + Player_personality_Honest + "\n\n" + Player_personality_Illiterate + "\n\n" + Player_personality_Inattentive + "\n\n" + Player_personality_Polite + "\n\n" + Player_personality_Quick + "\n\n" + Player_personality_Relentless + "\n\n" + Player_personality_Slow + "\n\n" + Player_personality_Specialized + "\n\n" + Player_personality_Suspicious + "\n\n" + Player_personality_Uncivilized + "\nEnter personality:")
-        if player_personality == "Abrasiveness" or player_personality == "Absent-Minded" or player_personality == "Aggression" or player_personality == "Brawler" or player_personality == "Cautious" or player_personality == "Detached" or player_personality == "Dishonesty" or player_personality == "Distinctive" or player_personality == "Easygoing" or player_personality == "Farsighted" or player_personality == "Focused" or player_personality == "Hard of Hearing" or player_personality == "Hardy" or player_personality == "Honest" or player_personality == "Illiterate" or player_personality == "Inattentive" or player_personality == "Polite" or player_personality == "Quick" or player_personality == "Relentless" or player_personality == "Slow" or player_personality == "Specialized" or player_personality == "Suspicious" or player_personality == "Uncivilized":
+        if player_personality.lower() == "abrasiveness" or player_personality.lower() == "absent-minded" or player_personality.lower == "aggression" or player_personality.lower() == "brawler" or player_personality.lower() == "cautious" or player_personality.lower() == "detached" or player_personality.lower() == "dishonesty" or player_personality.lower() == "distinctive" or player_personality.lower() == "easygoing" or player_personality.lower() == "farsighted" or player_personality.lower() == "focused" or player_personality.lower() == "hard of hearing" or player_personality.lower() == "hardy" or player_personality.lower() == "honest" or player_personality.lower() == "illiterate" or player_personality.lower() == "inattentive" or player_personality.lower() == "polite" or player_personality.lower() == "quick" or player_personality.lower() == "relentless" or player_personality.lower() == "slow" or player_personality.lower() == "specialized" or player_personality.lower() == "suspicious" or player_personality.lower() == "uncivilized":
             break
         else:
             print("[SYSTEM]Incorrect input ! Try again\n")
@@ -78,7 +78,7 @@ def dprint003(s):
 
 def saveload():
     if file_exists:
-        file=open("savefile001","r")
+        file=open("savefile001.sav","r")
         checkpoint = file.read()
         file.close()
     else:
@@ -104,12 +104,7 @@ def save():
     file.close()
 
 
-def checkpoint1():
-    print("[SYSTEM]Checkpoint '1' loaded")
 
-
-def checkpoint2():
-    print("[SYSTEM]Checkpoint '2' loaded")
 
 
 def room_2():
@@ -119,9 +114,8 @@ def room_2():
     dprint002("o...")
 
     print("[SYSTEM]Still some work to do here\n")
-    checkpoint2()
     input("[SYSTEM]Press enter to continue")
-
+    checkpoint = 2
 
 def room_1():
     time.sleep(3)
@@ -191,7 +185,7 @@ def room_1():
     print("\n")
     save()
     print("[SYSTEM]Checkpoint reached")
-    checkpoint1()
+    checkpoint = 1
 
 
 def room_all():
