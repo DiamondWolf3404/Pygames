@@ -5,6 +5,7 @@ import os.path
 import pickle
 import json
 
+
 Player_personality_Abrasiveness = str("Abrasiveness\nAbrasiveness can be seen as a negative trait because it describes having trouble being nice in a conversation. You're demanding, and although you can get what you want, you may end up hurting others. It can increase your intimidation stat, but people will find you insufferable, and it can destroy civil discourse.")
 Player_personality_AbsentMinded = str("Absent-Minded\nA character who is absentminded is seen as someone who is smart but is always thinking too much. Because of this, they may end up being lost in the conversation or not being aware of where they are. Your character may be someone they rely on for knowledge, but when it comes to being in the present, count them out.")
 Player_personality_Aggression = str("Aggression\nAggression is when a character is always ready to fight and is quite a menace. However, because of aggression, they may end up starting fights when there is a more peaceful solution, and their anger and brute force may be a weakness when the battle requires more strategy. Any kind of gestures that might demand power are included in this personality.")
@@ -100,12 +101,8 @@ def saveload():
 
 def save():
     file = open("savefile001.sav", "w")
-    file.write()
+    file.write( checkpoint )
     file.close()
-
-
-
-
 
 def room_2():
     dprint001("Perfec")
@@ -116,6 +113,7 @@ def room_2():
     print("[SYSTEM]Still some work to do here\n")
     input("[SYSTEM]Press enter to continue")
     checkpoint = 2
+
 
 def room_1():
     time.sleep(3)
@@ -150,7 +148,7 @@ def room_1():
     #print("\n")
     Player_LName = input("Last Name:")
     print("\n")
-    dprint001(Player_FName+"..."+Player_LName+"\nOk ! Hope I would remember it for at least a few minute")
+    dprint001(Player_FName+"..."+Player_LName+"\nOk ! Hope I will remember it for at least a few minute")
     dprint002("s...\n")
     while True:
         Player_Age = input("Age:")
